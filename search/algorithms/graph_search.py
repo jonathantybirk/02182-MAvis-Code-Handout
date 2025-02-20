@@ -85,14 +85,10 @@ def graph_search(
     
     if return_fixed_solution:
         return True, [
-            [Move("S")],
-            [Move("E")],
-            [Move("S")],
-            [Move("E")],
-            [Move("N")],
-            [Move("N")],
-            [Move("W")],
-            [Move("W")],
+            *[[Move("E")]]*7,
+            *[[Move("S")]]*2,
+            *[[Move("E")]]*3,
+            *[[Move("S")]]*2,
         ]
     frontier.add(root)
     expanded: set[State] = set()
